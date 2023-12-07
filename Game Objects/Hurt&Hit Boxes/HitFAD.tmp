@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bosptt6jek2v0"]
+
+[ext_resource type="Script" path="res://Game Objects/Hurt&Hit Boxes/Hitbox.gd" id="1_p20e2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr4vo"]
+size = Vector2(24, 6)
+
+[node name="Hitbox" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+script = ExtResource("1_p20e2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yr4vo")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

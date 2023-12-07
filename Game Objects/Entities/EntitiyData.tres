@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=2 format=3 uid="uid://cqb32ys62nyep"]
+
+[ext_resource type="Script" path="res://Game Objects/Entities/EntityData.gd" id="1_bcdiu"]
+
+[resource]
+script = ExtResource("1_bcdiu")

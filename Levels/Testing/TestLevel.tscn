@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbyus26a4tgsn"]
+
+[ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="2_6beub"]
+[ext_resource type="PackedScene" uid="uid://fcevnfi267ek" path="res://Game Objects/Entities/Bots/Gunners/TwinFire/Bot_TwinFire.tscn" id="2_vw3qd"]
+[ext_resource type="PackedScene" uid="uid://c4dc0ehedq8o8" path="res://Game Objects/Entities/Cores/Core.tscn" id="3_vfdak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oswfp"]
+size = Vector2(128, 128)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="WallContainter" type="Node" parent="."]
+
+[node name="Wall" type="Sprite2D" parent="WallContainter"]
+self_modulate = Color(0.160784, 0.160784, 0.160784, 1)
+position = Vector2(16, 272)
+scale = Vector2(0.25, 4.25)
+texture = ExtResource("2_6beub")
+
+[node name="StaticBody" type="StaticBody2D" parent="WallContainter/Wall"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainter/Wall/StaticBody"]
+shape = SubResource("RectangleShape2D_oswfp")
+
+[node name="Wall2" type="Sprite2D" parent="WallContainter"]
+self_modulate = Color(0.160784, 0.160784, 0.160784, 1)
+position = Vector2(944, 272)
+scale = Vector2(0.25, 4.25)
+texture = ExtResource("2_6beub")
+
+[node name="StaticBody" type="StaticBody2D" parent="WallContainter/Wall2"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainter/Wall2/StaticBody"]
+shape = SubResource("RectangleShape2D_oswfp")
+
+[node name="Wall3" type="Sprite2D" parent="WallContainter"]
+self_modulate = Color(0.160784, 0.160784, 0.160784, 1)
+position = Vector2(480, 528)
+scale = Vector2(7, 0.25)
+texture = ExtResource("2_6beub")
+
+[node name="StaticBody" type="StaticBody2D" parent="WallContainter/Wall3"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainter/Wall3/StaticBody"]
+shape = SubResource("RectangleShape2D_oswfp")
+
+[node name="Wall4" type="Sprite2D" parent="WallContainter"]
+self_modulate = Color(0.160784, 0.160784, 0.160784, 1)
+position = Vector2(480, 16)
+scale = Vector2(7, 0.25)
+texture = ExtResource("2_6beub")
+
+[node name="StaticBody" type="StaticBody2D" parent="WallContainter/Wall4"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainter/Wall4/StaticBody"]
+shape = SubResource("RectangleShape2D_oswfp")
+
+[node name="Core" parent="." instance=ExtResource("3_vfdak")]
+position = Vector2(480, 128)
+
+[node name="TwinFire" parent="." instance=ExtResource("2_vw3qd")]
+position = Vector2(488, 416)

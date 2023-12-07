@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbyus26a4tgsn"]
+
+[ext_resource type="PackedScene" uid="uid://fcevnfi267ek" path="res://Robots/Gunners/RapidFireBot.tscn" id="1_yqff2"]
+[ext_resource type="PackedScene" uid="uid://ckmemw4l8mdv4" path="res://Bullets/Bullet.tscn" id="2_20gjf"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="RapidFireBot" parent="." instance=ExtResource("1_yqff2")]
+position = Vector2(480, 176)
+max_speed = 200.0
+acceleration = 50.0
+deceleration = 50.0
+bullet = ExtResource("2_20gjf")
+primary_rate_of_fire = 0.2

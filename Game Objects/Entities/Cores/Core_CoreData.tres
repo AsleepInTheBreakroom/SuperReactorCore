@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CoreData" load_steps=2 format=3 uid="uid://dkd24yb3811cw"]
+
+[ext_resource type="Script" path="res://Game Objects/Entities/Cores/CoreData.gd" id="1_nockx"]
+
+[resource]
+script = ExtResource("1_nockx")
+name = "MyName"
+health = 0.0
