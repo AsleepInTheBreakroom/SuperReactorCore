@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="2_6beub"]
 [ext_resource type="PackedScene" uid="uid://fcevnfi267ek" path="res://Game Objects/Entities/Bots/Gunners/TwinFire/Bot_TwinFire.tscn" id="2_vw3qd"]
-[ext_resource type="PackedScene" uid="uid://c4dc0ehedq8o8" path="res://Game Objects/Entities/Cores/Core.tscn" id="3_vfdak"]
+[ext_resource type="PackedScene" uid="uid://bqoatrk07vmli" path="res://Game Objects/Entities/Cores/Core.tscn" id="3_vfdak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oswfp"]
 size = Vector2(128, 128)

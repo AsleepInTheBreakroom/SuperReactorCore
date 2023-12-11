@@ -4,5 +4,4 @@
 
 [resource]
 script = ExtResource("1_nockx")
-name = "MyName"
-health = 0.0
+max_health = 10000.0

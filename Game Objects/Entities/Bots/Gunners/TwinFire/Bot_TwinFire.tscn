@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://fcevnfi267ek"]
 
-[ext_resource type="PackedScene" uid="uid://bme77dhmqswtk" path="res://Game Objects/Entities/Bots/BotKinematic.tscn" id="1_ayd4n"]
+[ext_resource type="PackedScene" uid="uid://bme77dhmqswtk" path="res://Game Objects/Entities/Bots/Bot.tscn" id="1_b028f"]
 [ext_resource type="Script" path="res://Game Objects/Entities/Bots/Gunners/TwinFire/Bot_TwinFire.gd" id="2_dckmt"]
 [ext_resource type="Resource" uid="uid://ca1ucakn6fc83" path="res://Game Objects/Entities/Bots/Gunners/TwinFire/TwinFire_BotData.tres" id="3_2ys80"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_anhpa"]
 radius = 16.0
 
-[node name="TwinFire" instance=ExtResource("1_ayd4n")]
+[node name="TwinFire" instance=ExtResource("1_b028f")]
 script = ExtResource("2_dckmt")
 data = ExtResource("3_2ys80")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CircleShape2D_anhpa")
 debug_color = Color(1, 1, 0, 0.419608)
 

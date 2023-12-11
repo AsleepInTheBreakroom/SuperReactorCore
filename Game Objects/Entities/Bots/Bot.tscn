@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bme77dhmqswtk"]
+[gd_scene load_steps=6 format=3 uid="uid://bme77dhmqswtk"]
 
-[ext_resource type="Script" path="res://Game Objects/Entities/Bots/BotKinematic.gd" id="1_7m3il"]
-[ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="3_fqqv7"]
-[ext_resource type="PackedScene" uid="uid://bvv1hnpluqves" path="res://Game Objects/Hurt&Hit Boxes/Hurtbox.tscn" id="4_ira5r"]
+[ext_resource type="Script" path="res://Game Objects/Entities/Bots/Bot.gd" id="1_nh71r"]
+[ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="2_gi37o"]
+[ext_resource type="PackedScene" uid="uid://bvv1hnpluqves" path="res://Game Objects/Hurt&Hit Boxes/Hurtbox.tscn" id="3_0uut8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l3to8"]
 font_size = 12
@@ -10,14 +10,11 @@ font_size = 12
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoii4"]
 size = Vector2(32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kfkyr"]
-radius = 16.0
-
 [node name="BotKinematic" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
-script = ExtResource("1_7m3il")
+script = ExtResource("1_nh71r")
 
 [node name="BotInfoLabel" type="Label" parent="."]
 offset_right = 50.0
@@ -37,17 +34,13 @@ text = "Player Info"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_fqqv7")
+texture = ExtResource("2_gi37o")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uoii4")
 
-[node name="Hurtbox" parent="." instance=ExtResource("4_ira5r")]
+[node name="Hurtbox" parent="." instance=ExtResource("3_0uut8")]
 collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("CircleShape2D_kfkyr")
-debug_color = Color(1, 1, 0, 0.419608)
 
 [node name="PrimaryFireTimer" type="Timer" parent="."]
 one_shot = true

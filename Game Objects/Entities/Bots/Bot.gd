@@ -1,5 +1,5 @@
-extends CharacterBody2D
-class_name BotKinematic
+extends Entity
+class_name Bot
 #Base class that all Bots that use Kinematics will be derived from.
 
 #Each robot is basically going to be a gun with legs.
@@ -11,7 +11,7 @@ signal fire_primary(bullet_position:Vector2, bullet_direction:Vector2, bonus_spe
 #NOTE: The name of data should NOT be change. 
 #This variable is the same across other objects that use the EntityData resource.
 #This is important for hit/hurtboxes since they check for the data variable.
-@export var data:BotData;
+#@export var data:BotData;
 
 @onready var player_info_label:Label = $CanvasLayer/PlayerInfoLabel;
 @onready var bot_info_label:Label = $BotInfoLabel;
@@ -73,12 +73,12 @@ func secondary_fire():
 	#Virtual function that will get overriden in child bot classes.
 	pass;
 	
-func take_damage(_damage:float):
-	#Determines how the bot will take damge.
-	#Virtual function that will get overriden in child bot classes.
-	pass;
-	
-func die():
-	#Determines what the bot will do when it loses all of it's health.
-	#Virtual function that will get overriden in child bot classes.
-	pass;
+#func take_damage(_damage:float):
+	##Determines how the bot will take damge.
+	##Virtual function that will get overriden in child bot classes.
+	#pass;
+	#
+#func die():
+	##Determines what the bot will do when it loses all of it's health.
+	##Virtual function that will get overriden in child bot classes.
+	#pass;

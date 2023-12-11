@@ -1,4 +1,4 @@
-extends BotKinematic
+extends Bot
 #Twin Fire Bot
 
 #Will need to divide bots into types based on how they move.
@@ -22,7 +22,7 @@ func debug():
 	
 	#Bot Info
 	bot_info_label.position = Vector2(-bot_info_label.size.x/2, -bot_info_label.size.y + -20);
-	bot_info_label.text = "Health: " + str(data.health);
+	bot_info_label.text = "Health: " + str(health);
 	
 func _process(_delta):
 	debug();

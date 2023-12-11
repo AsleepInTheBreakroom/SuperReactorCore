@@ -8,6 +8,7 @@ script = ExtResource("1_c3p7b")
 [node name="DamageLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "Number"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BotData" load_steps=3 format=3 uid="uid://ca1ucakn6fc83"]
 
-[ext_resource type="PackedScene" uid="uid://ckmemw4l8mdv4" path="res://Bullets/Bullet.tscn" id="1_o3g6n"]
+[ext_resource type="PackedScene" uid="uid://ckmemw4l8mdv4" path="res://Game Objects/Entities/Bullets/Bullet.tscn" id="1_o3g6n"]
 [ext_resource type="Script" path="res://Game Objects/Entities/Bots/BotData.gd" id="2_qow1h"]
 
 [resource]
@@ -12,4 +12,4 @@ bullet_type = ExtResource("1_o3g6n")
 bullet_speed = 2000.0
 primary_rate_of_fire = 0.08
 secondary_rate_of_fire = 0.0
-health = 1.0
+max_health = 1.0

@@ -1,12 +1,13 @@
-extends CharacterBody2D
+extends Entity
 class_name Bullet
 #Base class for all types of bullets for the game.
 
-#could make more accurate by doing raycsat method.
+#Could make more accurate by doing raycsat method.
 	#If the raycast of the bullet collides with an object.
 	#Snap it to the collision point.
+#Might be beneficial for high speed bullets.
 
-@export var data:BulletData;
+#@export var data:BulletData;
 
 @onready var life_timer = $LifeTimer;
 @onready var sprite = $Sprite;
@@ -26,4 +27,8 @@ func _physics_process(_delta):
 	move_and_slide();
 
 func _on_life_timer_timeout():
+	queue_free();
+
+func on_hitbox_collision():
+	#If the bullet collides with something just delete it for down.
 	queue_free();

@@ -3,9 +3,14 @@ extends RigidBody2D
 
 #***In theory can pool these***.
 
+#Might simplift this object down.
+#Just think that this shouldnt be a rigidbody.
+#Seems costly, especially if there willl be a lot on screen.
+
 var damage_label:Label;
 
-func on_created(damage:float, direction:Vector2):
+func spawn(damage:float, direction:Vector2):
+	
 	#print("On created")
 	damage_label = get_node("DamageLabel");
 	apply_impulse(direction * 110);

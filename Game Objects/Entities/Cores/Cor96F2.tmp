@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqoatrk07vmli"]
+[gd_scene load_steps=7 format=3 uid="uid://bqoatrk07vmli"]
 
 [ext_resource type="Script" path="res://Game Objects/Entities/Cores/Core.gd" id="1_d0qq3"]
 [ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="2_4nbh6"]
-[ext_resource type="Resource" uid="uid://dkd24yb3811cw" path="res://Game Objects/Entities/Cores/Core_CoreData.tres" id="2_7ms8e"]
 [ext_resource type="PackedScene" uid="uid://bosptt6jek2v0" path="res://Game Objects/Hurt&Hit Boxes/Hitbox.tscn" id="3_q0mp3"]
 [ext_resource type="PackedScene" uid="uid://bvv1hnpluqves" path="res://Game Objects/Hurt&Hit Boxes/Hurtbox.tscn" id="4_goaov"]
 
@@ -14,7 +13,6 @@ radius = 64.0
 
 [node name="Core" type="CharacterBody2D"]
 script = ExtResource("1_d0qq3")
-data = ExtResource("2_7ms8e")
 
 [node name="CoreUI" type="CanvasLayer" parent="."]
 
@@ -37,7 +35,6 @@ texture = ExtResource("2_4nbh6")
 [node name="Hitbox" parent="." instance=ExtResource("3_q0mp3")]
 collision_layer = 4
 collision_mask = 2
-damage = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_lkfao")
