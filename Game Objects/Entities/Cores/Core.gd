@@ -30,7 +30,7 @@ func _ready():
 	#return("Core");
 
 func take_damage(damage:float):
-	health -= damage;
+	super(damage);
 	update_health_bar();
 	
 func update_health_bar():

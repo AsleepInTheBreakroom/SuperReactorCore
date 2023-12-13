@@ -10,18 +10,19 @@ class_name Bullet
 #@export var data:BulletData;
 
 @onready var life_timer = $LifeTimer;
-@onready var sprite = $Sprite;
 
-func on_created(pos:Vector2, dir:Vector2, bullet_speed:float):
+var direction:Vector2 = Vector2.ZERO;
+var speed:float = 0.0;
+
+func on_created(pos:Vector2, direction:Vector2, bullet_speed:float):
 	#Tells the bullet what to do when it is created.
 	
 	await ready #Wait for ready so we can get access to the onready variables.
 	#***Should set collision info based on who shot the bullet.
 	life_timer.start(data.life_time); #Start the life timer.
 	global_position = pos;
-	rotation = dir.angle_to_point(Vector2.ZERO);
-	velocity = dir * (bullet_speed); #Set the velocity.
-	#connect(Callable(data, "on_hitbox_entered"), queue_free);
+	rotation = direction.angle_to_point(Vector2.ZERO);
+	velocity = direction * (bullet_speed); #Set the velocity.
 	
 func _physics_process(_delta):
 	move_and_slide();
@@ -30,5 +31,5 @@ func _on_life_timer_timeout():
 	queue_free();
 
 func on_hitbox_collision():
-	#If the bullet collides with something just delete it for down.
+	#If the bullet collides with something just delete it for now.
 	queue_free();

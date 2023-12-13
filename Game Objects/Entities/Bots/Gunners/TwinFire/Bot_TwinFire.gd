@@ -15,14 +15,7 @@ extends Bot
 var shoot_point_index:int = 0;
 
 func debug():
-	#Player Info
-	player_info_label.text = "Input: " + str(input);
-	player_info_label.text += "\nVelocity: " + str(velocity);
-	player_info_label.text += "\nVelocity Real: " + str(get_real_velocity());
-	
-	#Bot Info
-	bot_info_label.position = Vector2(-bot_info_label.size.x/2, -bot_info_label.size.y + -20);
-	bot_info_label.text = "Health: " + str(health);
+	super();
 	
 func _process(_delta):
 	debug();
@@ -81,9 +74,9 @@ func primary_fire():
 		#But could be usefull for slower bullet types.
 	
 	#Do signal stuff.
-	connect("fire_primary", Callable(bullet_inst, "on_created"))
-	emit_signal("fire_primary", shoot_point.global_position, dir_to_mouse, data.bullet_speed);
-	disconnect("fire_primary", Callable(bullet_inst, "on_created"))
+	fire_primary.connect(Callable(bullet_inst, "on_created"));
+	fire_primary.emit(shoot_point.global_position, dir_to_mouse, data.bullet_speed);
+	fire_primary.disconnect(Callable(bullet_inst, "on_created"))
 	
 	#Add the bullet to the level.
 		#Need a better way to add a child.

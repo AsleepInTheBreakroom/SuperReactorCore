@@ -6,7 +6,8 @@ class_name Bot
 #Each sould have a primary fire and secondary fire.
 #Move speed, health, fire rate values, etc.
 
-signal fire_primary(bullet_position:Vector2, bullet_direction:Vector2, bonus_speed:float)
+signal has_died;
+signal fire_primary(bullet_position:Vector2, bullet_direction:Vector2, bonus_speed:float);
 
 #NOTE: The name of data should NOT be change. 
 #This variable is the same across other objects that use the EntityData resource.
@@ -49,13 +50,31 @@ func _physics_process(_delta):
 	#Virtual function that will get overriden in child bot classes.
 	pass;
 
-func get_class_name() -> String:
-	#Maybe stick things in grounds instead of having this function.
-	return("BotKinematic");
+#func get_class_name() -> String:
+	##Maybe stick things in grounds instead of having this function.
+	#return("BotKinematic");
+
+func take_damage(damage:float):
+	super(damage);
+
+func die():
+	super();
+	emit_signal("has_died");
 
 func debug():
 	#Display different things based on the bot.
 	#Virtual function that will get overriden in child bot classes.
+	
+	#---Generic stuff all bots will display---
+	#Player Info
+	player_info_label.text = "Input: " + str(input);
+	player_info_label.text += "\nVelocity: " + str(velocity);
+	player_info_label.text += "\nVelocity Real: " + str(get_real_velocity());
+	
+	#Bot Info
+	bot_info_label.position = Vector2(-bot_info_label.size.x/2, -bot_info_label.size.y + -20);
+	bot_info_label.text = "Health: " + str(health);
+	
 	pass;
 
 func move():
@@ -75,10 +94,5 @@ func secondary_fire():
 	
 #func take_damage(_damage:float):
 	##Determines how the bot will take damge.
-	##Virtual function that will get overriden in child bot classes.
-	#pass;
-	#
-#func die():
-	##Determines what the bot will do when it loses all of it's health.
 	##Virtual function that will get overriden in child bot classes.
 	#pass;

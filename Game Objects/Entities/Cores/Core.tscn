@@ -23,7 +23,7 @@ offset_left = 40.0
 offset_top = 8.0
 offset_right = 920.0
 offset_bottom = 48.0
-color = Color(1, 0, 0, 1)
+color = Color(1, 0, 0, 0.501961)
 
 [node name="HealthBarText" type="Label" parent="CoreUI"]
 offset_right = 40.0

@@ -16,18 +16,27 @@ func _enter_tree():
 	#Super will call the parent's _enter_tree() fucntion and then it will run what is in the child.
 	health = data.max_health;
 
-func take_damage(_damage:float):
+func take_damage(damage:float):
 	#Virtual function for when a entity takes damage.
-	pass;
+	health -= damage;
+	
+	if(health <= 0):
+		die();
+
+func die():
+	print(name + " has died. Health: " + str(health));
+	queue_free();
 
 func on_hitbox_collision():
 	#Virtual function for when the entity's hitbox collides with a hurtbox.
+	#***Primarily used for bullets so might change if that stays the case.
+	#print("on_hitbox_collision() in entity.")
 	pass;
 
-func on_hurtbox_collision():
-	#Virtual function for when the entity's hurtbox collides with a hitbox.
-	#print("Hurtbox of " + hitinfo["hurtbox_owner"].name + " got hit by " + hitinfo["hitbox_owner"].name + "'s hitbox.")
-	pass;
+#func on_hurtbox_collision():
+	##Virtual function for when the entity's hurtbox collides with a hitbox.
+	##print("Hurtbox of " + hitinfo["hurtbox_owner"].name + " got hit by " + hitinfo["hitbox_owner"].name + "'s hitbox.")
+	#pass;
 
 #func hitbox_collision_with_body():
 	##Virtual function for when the entity's hitbox collides with an body.
