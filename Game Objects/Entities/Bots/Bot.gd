@@ -22,6 +22,7 @@ signal fire_primary(bullet_position:Vector2, bullet_direction:Vector2, bonus_spe
 var input:Vector2 = Vector2.ZERO;
 var left_button_pressed:bool = false;
 var right_button_pressed:bool = false;
+var direction_to_mouse = Vector2.ZERO; #Needed to make the bot shoot in the direction of the mouse.
 
 func _unhandled_key_input(_event):
 	input = Input.get_vector("Keyboard_Left", "Keyboard_Right", "Keyboard_Up", "Keyboard_Down");
@@ -68,8 +69,9 @@ func debug():
 	#---Generic stuff all bots will display---
 	#Player Info
 	player_info_label.text = "Input: " + str(input);
-	player_info_label.text += "\nVelocity: " + str(velocity);
-	player_info_label.text += "\nVelocity Real: " + str(get_real_velocity());
+	player_info_label.text += "\nPosition: " + str(global_position);
+	#player_info_label.text += "\nVelocity: " + str(velocity);
+	#player_info_label.text += "\nVelocity Real: " + str(get_real_velocity());
 	
 	#Bot Info
 	bot_info_label.position = Vector2(-bot_info_label.size.x/2, -bot_info_label.size.y + -20);

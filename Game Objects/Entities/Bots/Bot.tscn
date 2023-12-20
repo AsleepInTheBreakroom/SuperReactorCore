@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bme77dhmqswtk"]
+[gd_scene load_steps=7 format=3 uid="uid://bme77dhmqswtk"]
 
 [ext_resource type="Script" path="res://Game Objects/Entities/Bots/Bot.gd" id="1_nh71r"]
 [ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="2_gi37o"]
 [ext_resource type="PackedScene" uid="uid://bvv1hnpluqves" path="res://Game Objects/Hurt&Hit Boxes/Hurtbox.tscn" id="3_0uut8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l3to8"]
-font_size = 12
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_xd06d"]
+font_size = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoii4"]
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
 [node name="BotKinematic" type="CharacterBody2D"]
 collision_layer = 2
@@ -17,6 +20,7 @@ motion_mode = 1
 script = ExtResource("1_nh71r")
 
 [node name="BotInfoLabel" type="Label" parent="."]
+visible = false
 offset_right = 50.0
 offset_bottom = 17.0
 text = "Bot Info"
@@ -28,12 +32,15 @@ vertical_alignment = 1
 visible = false
 
 [node name="PlayerInfoLabel" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 50.0
 offset_bottom = 17.0
 text = "Player Info"
+label_settings = SubResource("LabelSettings_xd06d")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+position = Vector2(1.56462e-07, 1.56462e-07)
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_gi37o")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

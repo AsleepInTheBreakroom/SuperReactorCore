@@ -7,22 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://bvv1hnpluqves" path="res://Game Objects/Hurt&Hit Boxes/Hurtbox.tscn" id="4_goaov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkfao"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8us43"]
-radius = 64.0
+radius = 32.0
 
 [node name="Core" type="CharacterBody2D"]
 script = ExtResource("1_d0qq3")
 data = ExtResource("2_7ms8e")
 
 [node name="CoreUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HealthBar" type="ColorRect" parent="CoreUI"]
-offset_left = 40.0
-offset_top = 8.0
-offset_right = 920.0
-offset_bottom = 48.0
+offset_right = 400.0
+offset_bottom = 40.0
 color = Color(1, 0, 0, 0.501961)
 
 [node name="HealthBarText" type="Label" parent="CoreUI"]
@@ -32,6 +31,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_4nbh6")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_q0mp3")]

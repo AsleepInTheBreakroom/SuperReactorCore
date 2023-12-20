@@ -11,9 +11,6 @@ class_name Bullet
 
 @onready var life_timer = $LifeTimer;
 
-var direction:Vector2 = Vector2.ZERO;
-var speed:float = 0.0;
-
 func on_created(pos:Vector2, direction:Vector2, bullet_speed:float):
 	#Tells the bullet what to do when it is created.
 	

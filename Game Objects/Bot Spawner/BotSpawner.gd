@@ -19,7 +19,8 @@ func spawn_bot():
 	current_bot = bot_instance.instantiate();
 	
 	#Set bot variables.
-	current_bot.global_position = Vector2(get_window().size.x/2, get_window().size.y/2);
+	var viewport_rect:Rect2 = get_viewport().get_visible_rect();
+	current_bot.global_position = Vector2(viewport_rect.size.x/2, viewport_rect.size.y/2 + 65);
 	
 	#Hook up signals.
 	current_bot.has_died.connect(start_respawn_timer);

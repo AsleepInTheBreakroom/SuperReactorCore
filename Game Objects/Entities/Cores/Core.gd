@@ -18,16 +18,14 @@ var health_bar_max_width:float;
 
 func _ready():
 	#Health Bar
+	health_bar.position = Vector2(40, 8);
+	health_bar.size = Vector2(get_viewport_rect().size.x - 80, 20);
 	health_bar_max_width = health_bar.size.x;
 	
 	#Health Bar Text
 	health_bar_text.size = health_bar.size;
 	health_bar_text.position = health_bar.position;
 	health_bar_text.text = str(health);
-
-#func get_class_name() -> String:
-	##Maybe stick things in grounds instead of having this function.
-	#return("Core");
 
 func take_damage(damage:float):
 	super(damage);

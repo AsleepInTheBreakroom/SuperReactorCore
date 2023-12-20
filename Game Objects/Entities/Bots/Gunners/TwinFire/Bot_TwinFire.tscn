@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://fcevnfi267ek"]
+[gd_scene load_steps=6 format=3 uid="uid://fcevnfi267ek"]
 
 [ext_resource type="PackedScene" uid="uid://bme77dhmqswtk" path="res://Game Objects/Entities/Bots/Bot.tscn" id="1_b028f"]
 [ext_resource type="Script" path="res://Game Objects/Entities/Bots/Gunners/TwinFire/Bot_TwinFire.gd" id="2_dckmt"]
 [ext_resource type="Resource" uid="uid://ca1ucakn6fc83" path="res://Game Objects/Entities/Bots/Gunners/TwinFire/TwinFire_BotData.tres" id="3_2ys80"]
+[ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="4_ro4t7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_anhpa"]
-radius = 16.0
+radius = 8.0
 
 [node name="TwinFire" instance=ExtResource("1_b028f")]
 script = ExtResource("2_dckmt")
@@ -16,7 +17,31 @@ shape = SubResource("CircleShape2D_anhpa")
 debug_color = Color(1, 1, 0, 0.419608)
 
 [node name="ShootPoint1" type="Marker2D" parent="ShootPointPivot" index="0"]
-position = Vector2(0, -24)
+position = Vector2(0, -16)
+
+[node name="Icon" type="Sprite2D" parent="ShootPointPivot/ShootPoint1" index="0"]
+modulate = Color(0.215686, 0.215686, 0.215686, 1)
+position = Vector2(1.11759e-07, 8.9407e-08)
+scale = Vector2(0.046875, 0.046875)
+texture = ExtResource("4_ro4t7")
+
+[node name="Icon4" type="Sprite2D" parent="ShootPointPivot/ShootPoint1" index="1"]
+modulate = Color(0.215686, 0.215686, 0.215686, 1)
+position = Vector2(-5, 0)
+scale = Vector2(0.03125, 0.0296875)
+texture = ExtResource("4_ro4t7")
 
 [node name="ShootPoint2" type="Marker2D" parent="ShootPointPivot" index="1"]
-position = Vector2(0, 24)
+position = Vector2(0, 16)
+
+[node name="Icon3" type="Sprite2D" parent="ShootPointPivot/ShootPoint2" index="0"]
+modulate = Color(0.215686, 0.215686, 0.215686, 1)
+position = Vector2(-4.8, 3.57628e-07)
+scale = Vector2(0.028125, 0.0296875)
+texture = ExtResource("4_ro4t7")
+
+[node name="Icon2" type="Sprite2D" parent="ShootPointPivot/ShootPoint2" index="1"]
+modulate = Color(0.215686, 0.215686, 0.215686, 1)
+position = Vector2(-7.45058e-08, 8.9407e-08)
+scale = Vector2(0.046875, 0.046875)
+texture = ExtResource("4_ro4t7")

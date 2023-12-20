@@ -17,8 +17,16 @@ var shoot_point_index:int = 0;
 func debug():
 	super();
 	
-func _process(_delta):
+func _process(delta):
 	debug();
+	
+	#Rotate shoot_point_pivot to follow the mouse.
+	direction_to_mouse = (get_global_mouse_position() - global_position).normalized();
+	shoot_point_pivot.rotation = direction_to_mouse.angle_to_point(Vector2.ZERO)
+	
+	#***Should lerp***
+	#But then need to have the bullets shoot in the direction of the shoot_point_pivot.
+	#shoot_point_pivot.rotation = lerp_angle(shoot_point_pivot.rotation, direction_to_mouse.angle_to_point(Vector2.ZERO), 15 * delta)
 	
 	#Shooting
 	if(left_button_pressed):
@@ -58,10 +66,10 @@ func primary_fire():
 	var bullet_inst:Bullet = data.bullet_type.instantiate();
 	
 	#Get signal info.
-	var dir_to_mouse:Vector2 = (get_global_mouse_position() - global_position).normalized();
+	#var dir_to_mouse:Vector2 = (get_global_mouse_position() - global_position).normalized();
 	
 	#Alternate where to shoot from.
-	shoot_point_pivot.rotation = dir_to_mouse.angle_to_point(Vector2.ZERO)
+	#shoot_point_pivot.rotation = dir_to_mouse.angle_to_point(Vector2.ZERO)
 	var shoot_point:Marker2D = shoot_point_pivot.get_child(shoot_point_index);
 	shoot_point_index += 1;
 	if(shoot_point_index > shoot_point_pivot.get_child_count() - 1): shoot_point_index = 0;
@@ -75,7 +83,7 @@ func primary_fire():
 	
 	#Do signal stuff.
 	fire_primary.connect(Callable(bullet_inst, "on_created"));
-	fire_primary.emit(shoot_point.global_position, dir_to_mouse, data.bullet_speed);
+	fire_primary.emit(shoot_point.global_position, direction_to_mouse, data.bullet_speed);
 	fire_primary.disconnect(Callable(bullet_inst, "on_created"))
 	
 	#Add the bullet to the level.

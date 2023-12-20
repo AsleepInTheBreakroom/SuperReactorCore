@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("2_qow1h")
-max_speed = 370.0
-acceleration = 400.0
-friction_multiplier = 0.75
+max_speed = 250.0
+acceleration = 90.0
+friction_multiplier = 0.6
 bullet_type = ExtResource("1_o3g6n")
 bullet_speed = 2000.0
 primary_rate_of_fire = 0.08
