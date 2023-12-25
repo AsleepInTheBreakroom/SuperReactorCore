@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbyus26a4tgsn"]
+[gd_scene load_steps=10 format=3 uid="uid://dbyus26a4tgsn"]
 
 [ext_resource type="PackedScene" uid="uid://deti330c0hm6v" path="res://Game Objects/Bot Spawner/BotSpawner.tscn" id="1_fj6dq"]
 [ext_resource type="Texture2D" uid="uid://d3e4lyyvf3vew" path="res://icon.svg" id="2_6beub"]
 [ext_resource type="Texture2D" uid="uid://bcq8bij82gniy" path="res://Art/Temp/TempWalls(16).png" id="2_ds780"]
 [ext_resource type="PackedScene" uid="uid://bqoatrk07vmli" path="res://Game Objects/Entities/Cores/Core.tscn" id="3_vfdak"]
+[ext_resource type="PackedScene" uid="uid://bi2ss6k2klbyh" path="res://Testing/SpriteStack/SpriteStack.tscn" id="5_ldpfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtmvm"]
 texture = ExtResource("2_ds780")
@@ -88,3 +89,6 @@ shape = SubResource("RectangleShape2D_linex")
 
 [node name="Core" parent="." instance=ExtResource("3_vfdak")]
 position = Vector2(240, 56)
+
+[node name="SpriteStack" parent="." instance=ExtResource("5_ldpfq")]
+position = Vector2(136, 120)

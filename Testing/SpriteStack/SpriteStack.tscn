@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi2ss6k2klbyh"]
+
+[ext_resource type="Script" path="res://Testing/SpriteStack/SpriteStack.gd" id="2_hs6jq"]
+[ext_resource type="Texture2D" uid="uid://shihe7c42aig" path="res://Art/Temp/Red_Car.png" id="2_jsbjt"]
+
+[node name="SpriteStack" type="Node2D"]
+script = ExtResource("2_hs6jq")
+sprite_strip = ExtResource("2_jsbjt")
