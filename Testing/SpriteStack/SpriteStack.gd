@@ -28,10 +28,10 @@ func _ready():
 			sprite.hframes = rows;
 			sprite.vframes = columns
 			sprite.frame = cell;
-			sprite.position = Vector2(0, -cell)
+			sprite.position = Vector2(0, -cell*2)
 			sprite.scale = Vector2(2,2)
+			#sprite.frame_coords = Vector2(rows, columns); #Should make it use this, so can start at any point in the sprite sheet.
 			sprite_array[cell] = sprite;
-			
 			add_child(sprite);
 			
 			cell += 1;

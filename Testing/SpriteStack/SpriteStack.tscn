@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi2ss6k2klbyh"]
+[gd_scene load_steps=2 format=3 uid="uid://bi2ss6k2klbyh"]
 
 [ext_resource type="Script" path="res://Testing/SpriteStack/SpriteStack.gd" id="2_hs6jq"]
-[ext_resource type="Texture2D" uid="uid://b0ku7osa0iwrm" path="res://Art/Temp/Pyramid.png" id="2_p5gla"]
 
 [node name="SpriteStack" type="Node2D"]
 script = ExtResource("2_hs6jq")
-sprite_sheet = ExtResource("2_p5gla")
-num_of_sprites = 5

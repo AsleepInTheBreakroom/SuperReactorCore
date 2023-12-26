@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcq8bij82gniy" path="res://Art/Temp/TempWalls(16).png" id="2_ds780"]
 [ext_resource type="PackedScene" uid="uid://bqoatrk07vmli" path="res://Game Objects/Entities/Cores/Core.tscn" id="3_vfdak"]
 [ext_resource type="PackedScene" uid="uid://bi2ss6k2klbyh" path="res://Testing/SpriteStack/SpriteStack.tscn" id="5_ldpfq"]
-[ext_resource type="Texture2D" uid="uid://shihe7c42aig" path="res://Art/Temp/Red_Car.png" id="6_33wgv"]
+[ext_resource type="Texture2D" uid="uid://bk1d0lkv7xwd7" path="res://Art/Temp/RobotSheet.png" id="6_mnvad"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtmvm"]
 texture = ExtResource("2_ds780")
@@ -93,7 +93,5 @@ position = Vector2(240, 56)
 
 [node name="SpriteStack" parent="." instance=ExtResource("5_ldpfq")]
 position = Vector2(136, 120)
-
-[node name="RedCar" type="Sprite2D" parent="."]
-position = Vector2(196, 177)
-texture = ExtResource("6_33wgv")
+sprite_sheet = ExtResource("6_mnvad")
+num_of_sprites = 9
